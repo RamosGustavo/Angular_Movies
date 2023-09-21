@@ -1,0 +1,18 @@
+<section class="imputs">
+    <form>
+        <div class="row mt-4 text-center">
+            <div class="col-12 mt-5">
+                <img src="{{logo}}" alt="logo" class="logo">
+            </div>
+            <div class="col-12 mt-5">
+                <input type="text" pInputText [(ngModel)]="value" name="username"/>
+            </div>
+            <div class="col-12 mt-2">
+                <input type="password" pPassword [feedback]="false"/>
+            </div>
+            <div class="col-12 mt-4">
+                <button pButton type="button" label="Iniciar sesion" (click)="login()"></button>
+            </div>
+        </div>
+    </form>
+</section>
