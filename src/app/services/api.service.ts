@@ -32,13 +32,13 @@ export class ApiService<T> {
     const headers = new HttpHeaders({
       accept: 'application/json',
     });
-    const { url, params, body } = paramsReq;
+    const { url, params } = paramsReq;
     const options = {
       headers,
       params
     }
 
-    return this.http.post<T>(url, body, options)
+    return this.http.get<T>(url, options)
     .pipe(map(res => res),
     catchError(this.handerError)
     );
