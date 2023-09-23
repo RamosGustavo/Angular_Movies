@@ -44,10 +44,10 @@ export class LoginComponent implements OnInit {
       request_toquen: sessionStorage.getItem('request_toquen')
     }
 
-    const configPost = { url: ConstantUri.validateWithLogin, params: {api_key: ConstantUri.apikey}, body };
+    const configPost = { url: ConstantUri.validateWithLogin, params: { api_key: ConstantUri.apikey }, body };
     this.ApiService.postService(configPost).subscribe(val => {
-      console.log(val);
-      
+      const { request_token } = val;
+      sessionStorage.setItem('request_toquen', request_token);
     });
 
     console.log(this.formLogin.value);
